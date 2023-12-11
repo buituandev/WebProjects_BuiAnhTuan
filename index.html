@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/logo2.jpg">
+    <title>Tuan The Restaurant</title>
+</head>
+
+<body>
+
+    <div id="scroll_to_top_btn">
+        <div id="value">
+            <span class="top_btn"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+    </div>
+    <nav>
+        <div class="nav_bar">
+            <div class="nav_header">
+                <div class="logo nav_logo">
+                    <a href="#home"> <img src="assets/logo.jpg" alt="logo"></a>
+                </div>
+                <div class="nav_menu_btn" id="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <ul class="nav_links" id="nav-links">
+                <li><a href="#home" class="dropdown-item" type="button">Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn-dropdown btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Who We Are?
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#about" class="dropdown-item" type="button">About Us</a></li>
+                            <li><a href="#chef" class="dropdown-item" type="button">Chefs</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#space">Space</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#menu">Food Menu</a></li>
+                <li><a href="#" id="login-btn"><i class="fa-solid fa-user"></i>Login</a></li>
+            </ul>
+            <ul class="nav_links" id="nav-links-login">
+                <li><a href="#" id="login-btn"><i class="fa-solid fa-user"></i>Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="popup-overlay">
+        <div class="popup">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="form">
+                <h2>Log In</h2>
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" />
+                </div>
+                <div class="form-element">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" />
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div class="form-element">
+                    <button type="submit" class="btn" data-bs-toggle="modal" data-bs-target="#RestaurantModal"
+                        data-title="Login is under maintenance!"
+                        data-message="Login is unavailable right now. Please come back tomorrow!">Login</button>
+                </div>
+                <div class="form-element">
+                    <p>Don't have an account? <a href="#">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="header" id="home">
+        <video autoplay loop muted class="header_video">
+            <source src="assets/header1.mp4" type="video/mp4">
+        </video>
+        <div class="section_container header_container">
+            <p class="section_subheader">TUAN THE RESTAURANT</p>
+            <h1>Bon Appétit!<br> At Tuan French Restaurant!</h1>
+            <a href="#about" class="btn btn-about" id="go-btn">Take A Look</a>
+        </div>
+    </header>
+
+    <section class="booking">
+        <video autoplay muted loop id="bookVideo">
+            <source src="assets/gold.mp4" type="video/mp4">
+        </video>
+        <div class="section_container booking_container">
+            <form action="/">
+                <div class="input_group">
+                    <label for="date">Reservation Date</label>
+                    <input type="text" id="res-date" placeholder="Your Reservation Date">
+                </div>
+                <div class="input_group">
+                    <label for="time">Reservation Time</label>
+                    <input type="text" id="res-time" placeholder="Your Reservation Time">
+                </div>
+                <div class="input_group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="text" placeholder="# of Guests">
+                </div>
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#RestaurantModal"
+                    data-title="Reservations are not found"
+                    data-message="There are no tables available for the selected date and time. Please try again with different date or time.">Book
+                    Your Table</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section_container about_container">
+            <div class="about_grid">
+                <div class="about_image">
+                    <img src="https://www.discoverwalks.com/blog/wp-content/uploads/2019/05/screen-shot-2019-05-24-at-5.09.59-pm.jpg"
+                        alt="about" />
+                </div>
+                <div class="about_card">
+                    <span class="material-symbols-outlined">
+                        room_service
+                    </span>
+                    <h4>Exceptional Dining Experience</h4>
+                    <p>
+                        Experience top-tier hospitality with our dedicated restaurant staff. We are committed to
+                        providing excellence in service and ensuring your utmost satisfaction throughout your dining
+                        experience.
+                    </p>
+                </div>
+                <div class="about_image">
+                    <img src="https://img.freepik.com/premium-photo/french-restaurant-with-beautiful-decoration-photo-high-quality_1013016-558.jpg"
+                        alt="about" />
+                </div>
+                <div class="about_card">
+                    <span class="material-symbols-outlined" id="room-ic">
+                        bed
+                    </span>
+                    <h4>Exquisite Dining</h4>
+                    <p>Indulge in our exquisite and diverse menu, featuring a blend of traditional French cuisine and
+                        modern culinary techniques. Our dishes are prepared with the finest ingredients to ensure an
+                        unforgettable dining experience.</p>
+                </div>
+            </div>
+            <div class="about_content">
+                <p class="section_subheader">Introduction</p>
+                <h2 class="section_header">Welcome to Tuan's French Restaurant</h2>
+                <img src="assets/about-bg.jpg" alt="bg">
+                <p class="section_description">
+                    Experience the charm of French dining in the heart of the city, where you can savor
+                    exquisite dishes prepared by our skilled chefs. Tuan's French Restaurant offers a diverse menu, a
+                    curated wine list, and a warm, inviting atmosphere. Whether you are here for a casual meal or a
+                    special occasion, we strive to make your dining experience unforgettable.
+                </p>
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#RestaurantModal"
+                    data-title="Notice" data-message="Please login first!">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="chef" id="chef">
+        <div class="section_container chef_container">
+            <p class="section_subheader">Chefs</p>
+            <h2 class="section_header">Our Top 1 Chefs</h2>
+            <div class="chef-wrapper">
+                <div class="chef-box mySwiper">
+                    <div class="chef-content swiper-wrapper">
+                        <div class="chef-slide swiper-slide">
+                            <img src="assets/chef1.jpg" alt="chef">
+                            <h3>Antonie Johnson</h3>
+                            <p>Working at this restaurant has been an incredible journey. The passion for culinary
+                                excellence here is infectious. Every dish we create is a testament to our commitment to
+                                quality and innovation. The opportunity to craft beautiful and flavorful dishes for our
+                                guests is truly rewarding. I am proud to be part of a team that values creativity and
+                                dedication to the culinary arts.</p>
+                        </div>
+                        <div class="chef-slide swiper-slide">
+                            <img src="assets/chef2.jpg" alt="chef">
+                            <h3>Alexandre Smith</h3>
+                            <p>Working in this restaurant has been a fantastic experience. The emphasis on quality and
+                                the attention to detail in every dish we serve is what sets us apart. I take great pride
+                                in contributing to the exceptional dining experiences we provide for our guests. This is
+                                truly a great place to work and grow as a chef.</p>
+                        </div>
+                        <div class="chef-slide swiper-slide">
+                            <img src="assets/chef3.jpg" alt="chef">
+                            <h3>Léa Peterson</h3>
+                            <p>Being a chef at this restaurant is a dream come true. The team's dedication to creating
+                                unique and delicious dishes is inspiring. I love the creative freedom I have here, and
+                                the opportunity to constantly learn and grow. It's a pleasure to be part of such a
+                                passionate and committed team.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="space_container" id="space">
+        <p class="section_subheader">SPACES</p>
+        <h2 class="section_header">Our Popular Spaces</h2>
+        <div class="space_grid">
+            <a href="#contact">
+                <div class="space_card">
+                    <img src="assets/space-1.jpg" alt="space">
+                    <div class="space_card_details">
+                        <div>
+                            <h4>Private Dining Room</h4>
+                            <p>This private room offers a stunning view of the city skyline, perfect for intimate
+                                dinners
+                                and small gatherings.</p>
+                        </div>
+                        <h3>Contact Us for Pricing</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="#contact">
+                <div class="space_card">
+                    <img src="assets/space-2.jpg" alt="space">
+                    <div class="space_card_details">
+                        <div>
+                            <h4>Outdoor Patio</h4>
+                            <p>Our outdoor patio provides a beautiful view of the landscape, perfect for larger parties and
+                                events.</p>
+                        </div>
+                        <h3>Contact Us for Pricing</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="#contact">
+                <div class="space_card">
+                    <img src="assets/space-3.jpg" alt="space">
+                    <div class="space_card_details">
+                        <div>
+                            <h4>Main Dining Room</h4>
+                            <p>Our main dining room can accommodate larger parties and events and offers the luxury environment with modern facilities.</p>
+                        </div>
+                        <h3>Contact Us for Pricing</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="section_container news_container" id="news">
+        <div class="news_header">
+            <div>
+                <p class="section_subheader">BLOG</p>
+                <h2 class="section_header">News Feeds</h2>
+            </div>
+        </div>
+        <div class="news_grid">
+            <div class="news_card">
+                <img src="assets/news-1.jpg" alt="news">
+                <div class="news-type">HOT</div>
+                <h4>Introducing Our New Spring Menu</h4>
+                <p>We're excited to introduce our new Spring menu, featuring fresh, seasonal ingredients and innovative
+                    dishes. Come and experience the vibrant flavors of Spring at our restaurant.</p>
+                <div class="news_card_title">
+                    <p>4 months ago &middot; By Maria</p>
+                </div>
+            </div>
+            <div class="news_card">
+                <img src="assets/news-2.jpg" alt="news">
+                <div class="news-type">new</div>
+                <h4>Wine Tasting Event</h4>
+                <p>Join us for a special wine tasting event, where you can sample a selection of fine wines from our
+                    extensive wine list. Our sommelier will guide you through the tasting, sharing their knowledge and
+                    passion for wine.</p>
+                <div class="news_card_title">
+                    <p>3 months ago &middot; By Jack</p>
+                </div>
+            </div>
+            <div class="news_card">
+                <img src="assets/news-3.jpg" alt="news">
+                <div class="news-type">holiday</div>
+                <h4>Christmas Special Menu</h4>
+                <p>Celebrate the festive season with our special Christmas menu. Enjoy a selection of traditional dishes
+                    with a modern twist, prepared by our skilled chefs. Make your Christmas celebration extra special at
+                    our restaurant.</p>
+                <div class="news_card_title">
+                    <p>5 days ago &middot; By Mimi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section_container facilities_container" id="facilities">
+        <p class="section_subheader">FACILITIES</p>
+        <h2 class="section_header">What We Offer</h2>
+        <div class="facilities_grid">
+            <div class="facilities_card">
+                <span class="material-symbols-outlined">
+                    restaurant_menu
+                </span>
+                <h4>Exquisite Cuisine</h4>
+                <p>
+                    Our restaurant offers a variety of dishes, from traditional French cuisine to innovative culinary
+                    creations, using fresh and quality ingredients. With a panoramic view of the city and a cozy,
+                    elegant ambiance, our restaurant is the perfect place to enjoy a delicious meal.
+                </p>
+            </div>
+            <div class="facilities_card">
+                <span class="material-symbols-outlined">
+                    wine_bar
+                </span>
+                <h4>Wine Selection</h4>
+                <p>
+                    We offer a curated selection of fine wines from around the world. Whether you're a wine connoisseur
+                    or a casual drinker, our knowledgeable staff can help you choose the perfect wine to complement your
+                    meal.
+                </p>
+            </div>
+            <div class="facilities_card">
+                <span class="material-symbols-outlined">
+                    location_on
+                </span>
+                <h4>Prime Location</h4>
+                <p>
+                    Located in the heart of the city, our restaurant is easily accessible and close to major
+                    attractions. Whether you're a local or a tourist, our restaurant is the perfect place to enjoy a
+                    meal while exploring the city.
+                </p>
+            </div>
+            <div class="facilities_card">
+                <span class="material-symbols-outlined">
+                    event
+                </span>
+                <h4>Events & Catering</h4>
+                <p>
+                    We offer event and catering services for special occasions. Whether it's a birthday, anniversary, or
+                    corporate event, our team will work with you to create a memorable dining experience.
+                </p>
+            </div>
+            <div class="facilities_card">
+                <span class="material-symbols-outlined">
+                    star
+                </span>
+                <h4>Quality Service</h4>
+                <p>
+                    Our staff is committed to providing exceptional service to ensure your dining experience is
+                    enjoyable. From the moment you walk in the door, you'll be treated with the utmost care and
+                    attention.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="section_container menu_container">
+            <div class="menu_header">
+                <div>
+                    <p class="section_subheader">
+                        MENU
+                    </p>
+                    <h2 class="section_header">
+                        Our Restaurant Best Food
+                    </h2>
+                </div>
+            </div>
+            <ul class="menu_items">
+                <li>
+                    <img src="assets/menu-1.jpg" alt="menu" />
+                    <div class="menu_details">
+                        <h4>Soupe à l’oignon</h4>
+                        <p>
+                            The soup’s unique flavor comes from the caramelization of the onions, which often have
+                            brandy or sherry added during the slow-cooking process.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/menu-2.jpg" alt="menu" />
+                    <div class="menu_details">
+                        <h4>Ratatouille</h4>
+                        <p>
+                            From Provence, the dish sees vegetables shallow-fried and then layered in a casserole dish
+                            before being baked in an oven.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/menu-3.jpg" alt="menu" />
+                    <div class="menu_details">
+                        <h4>Tarte Tatin</h4>
+                        <p>
+                            Dark and sticky caramel, sweet apples and crisp pastry combine to make this heavenly French
+                            dessert.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/menu-4.jpg" alt="menu" />
+                    <div class="menu_details">
+                        <h4>Macarons</h4>
+                        <p>
+                            Macarons are delicate and colorful French pastries that are made with almond flour, egg
+                            whites, and sugar. They have a crisp shell and a chewy center, and are filled with various
+                            flavors of buttercream, ganache, or jam.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/menu-5.jpg" alt="menu" />
+                    <div class="menu_details">
+                        <h4>Tarte Tropézienne</h4>
+                        <p>
+                            Tarte Tropézienne is a decadent pastry that is made with a brioche dough, filled with
+                            a rich mixture of crème pâtissière and crème au beurre. It is a popular dessert,
+                            and is often enjoyed as a treat on the French Riviera.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/menu-6.jpg" alt="menu" />
+                    <div class="menu_details">
+                        <h4>Café au lait</h4>
+                        <p>
+                            Café au lait is a classic French coffee drink that is made by combining equal parts coffee
+                            and steamed milk. It is a popular choice for breakfast and can be enjoyed hot or cold.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img
+                            src="https://www.goway.com/media/cache/f7/3a/f73a74e3680c5823548a914a8f035f15.jpg"
+                            alt="slider"></div>
+                    <div class="swiper-slide"><img src="assets/slider-2.jpg" alt="slider"></div>
+                    <div class="swiper-slide"><img src="assets/slider-3.jpg" alt="slider"></div>
+                    <div class="swiper-slide"><img
+                            src="https://cdn.tasteatlas.com/images/toplistarticles/bba22b1a5d424d6a87e6397f7a9598ff.jpg"
+                            alt="slider"></div>
+                    <div class="swiper-slide"><img
+                            src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2018/08/24/e16c4fddd4174851915e835bdaeeab46_81ccb12521b34fe491b492a4d0a187c3_LeNormandie.jpg"
+                            alt="slider"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="contact-us" id="contact">
+        <div class="section_container contac-us-container">
+            <div class="section_subheader">Contact Us</div>
+            <div class="section_header">Have questions or want to talk? Drop us a line.</div>
+            <div class="form">
+                <form action="submit_form.php" method="post">
+                    <div class="input-grid">
+                        <div class="input-item"><label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required placeholder="Can we have your name?">
+                        </div>
+                        <div class="input-item"><label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required
+                                placeholder="Please let us know your email address">
+                        </div>
+                    </div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required
+                        placeholder="Please leave us your message!"></textarea><br>
+                    <div class="submit-btn"><button class="btn" type="submit">Submit</button></div>
+                </form>
+                <p class="notice-text">*Please call us at the following number if you have any conenential questions: <a
+                        href="te:012345678">0123456789</a>. Thank you so much!</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="section_container footer_container">
+            <div class="footer_col">
+                <div class="logo footer_logo">
+                    <img src="assets/logo.jpg" alt="logo">
+                </div>
+                <p class="section_description">
+                    Welcome to Tuan's French Restaurant!
+                </p>
+            </div>
+            <div class="footer_col">
+                <div class="footer_links">
+                    <li><a href="#">Private Dining</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Catering</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Staff</a></li>
+                </div>
+            </div>
+            <div class="footer_col">
+                <div class="footer_links">
+                    <li>Phone: <a href="tel:0123456789">012345789</a></li>
+                    <li>Email: <a href="mailto:tuanrestaurant@tuangroup.com">tuanrestaurant@tuangroup.com</a></li>
+                    <li>Address: <a href="#">4 rue de Raymond Poincaré, Pays de la Loire</a></li>
+                </div>
+            </div>
+            <div class="footer_col">
+                <ul class="footer_socials">
+                    <li>
+                        <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://x.com"><i class="fa-brands fa-x-twitter"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_col" id="to-top-btn">
+                <div class="footer-iconTop">
+                    <a href="#home"><i class="fa-solid fa-chevron-up"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bar">
+            <p>&copy; 2023 Tuan The Restaurant. All rights reserved. | Designed and Developed by <a href="#">Tuan
+                    Group</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="RestaurantModal" tabindex="-1" aria-labelledby="RestaurantModalLabel" aria-hidden="true"
+        style="padding-right: 0px;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="RestaurantModalTitle">We Are Sorry</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Restaurant Modal
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

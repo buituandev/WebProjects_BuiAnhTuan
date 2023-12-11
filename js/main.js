@@ -61,7 +61,6 @@ const scrollRevealOption = {
 //date picker
 $(function () {
   $("#res-date").datepicker();
-  $("#res-time").datepicker();
 });
 
 // header container

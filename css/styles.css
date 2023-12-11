@@ -1173,7 +1173,7 @@ nav {
     }
 
 
-    #nav-links li:last-child {
+    #nav-links li#login-vertical {
         display: none;
     }
 
